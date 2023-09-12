@@ -79,6 +79,8 @@ class ViewController: UIViewController,
     // Exercise 3: Change the scale of the kart
     // Tip: Use the `scale` function below
     // YOUR CODE HERE
+      
+      scale(kart: sender.view, gestureRecognizer: sender)
   }
   
   private func scale(kart: UIView?,
