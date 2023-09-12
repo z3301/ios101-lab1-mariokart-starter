@@ -37,12 +37,14 @@ class ViewController: UIViewController,
     // Tip: Use the `translate` function below
     // YOUR CODE HERE
       
-      translate(kart: sender.view, by: view.frame.width) // move the kart forward by the width of the containing view
-    
-    // Exercise 6: Move the kart back to its original position after you've moved it off the screen
-    // Tip: Change your usage of the `translate` function to
-    // use the optional completion closure
-    // YOUR CODE HERE
+      translate(kart: sender.view, by: view.frame.width) { // move the kart forward by the width of the containing view
+          // Exercise 6: Move the kart back to its original position after you've moved it off the screen
+          // Tip: Change your usage of the `translate` function to
+          // use the optional completion closure
+          // YOUR CODE HERE
+          
+          self.translate(kart: sender.view, by: -self.view.frame.width)
+      }
   }
   
   private func translate(kart: UIView?,
