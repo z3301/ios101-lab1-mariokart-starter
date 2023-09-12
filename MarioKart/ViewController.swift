@@ -132,7 +132,9 @@ class ViewController: UIViewController,
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated) // since we're overriding this from the super class, we should call the super class implementation
       // runStartingAnimationsAllAtOnce()
-      runStartingAnimationsOneByOne()
+      runStartingAnimationsOneByOne {
+          self.raceKartsWithSameSpeed()
+        }
   }
     
   
@@ -178,6 +180,9 @@ class ViewController: UIViewController,
   // Tip: Use the `translate` function above
   private func raceKartsWithSameSpeed() {
     // YOUR CODE HERE
+      translate(kart: kartView0, by: view.frame.width)
+      translate(kart: kartView1, by: view.frame.width)
+      translate(kart: kartView2, by: view.frame.width)
   }
   
   // Exercise 10: Have the karts race all at once to the finish line!
