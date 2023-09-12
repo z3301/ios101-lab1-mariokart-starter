@@ -133,7 +133,8 @@ class ViewController: UIViewController,
     super.viewDidAppear(animated) // since we're overriding this from the super class, we should call the super class implementation
       // runStartingAnimationsAllAtOnce()
       runStartingAnimationsOneByOne {
-          self.raceKartsWithSameSpeed()
+          // self.raceKartsWithSameSpeed()
+          self.raceKartsWithRandomizedSpeed()
         }
   }
     
@@ -189,6 +190,12 @@ class ViewController: UIViewController,
   // Tip: Use the `translate` function above
   private func raceKartsWithRandomizedSpeed() {
     // YOUR CODE HERE
+      let kartView0Speed = Double.random(in: 0.5...5) // get a random value between 0.5 and 5.0
+      translate(kart: kartView0, by: view.frame.width, animationDuration: kartView0Speed)
+      let kartView1Speed = Double.random(in: 0.5...5)
+      translate(kart: kartView1, by: view.frame.width, animationDuration: kartView1Speed)
+      let kartView2Speed = Double.random(in: 0.5...5)
+      translate(kart: kartView2, by: view.frame.width, animationDuration: kartView2Speed)
   }
 }
 
