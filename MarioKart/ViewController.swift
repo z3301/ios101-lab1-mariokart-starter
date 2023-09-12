@@ -99,9 +99,10 @@ class ViewController: UIViewController,
   // Exercise 4: Implement the `moveKart` function to move the kart based on the
   // location of the location of the gesture in the view
   private func moveKart(using gestureRecognizer: UIPanGestureRecognizer) {
-    let location = gestureRecognizer.location(in: view) // get the location of the gesture
-    let kartView = gestureRecognizer.view // get a reference to the kart
-    kartView?.center = location // move the kart to that location
+    // YOUR CODE HERE
+      let location = gestureRecognizer.location(in: view) // get the location of the gesture
+      let kartView = gestureRecognizer.view // get a reference to the kart
+      kartView?.center = location // move the kart to that location
   }
   
   @IBAction func didLongPressBackground(_ sender: UILongPressGestureRecognizer) {
@@ -113,6 +114,16 @@ class ViewController: UIViewController,
   // Exercise 5: Implement `resetKarts` to reset the size and positioning of the karts
   private func resetKarts() {
     // YOUR CODE HERE
+      UIView.animate(withDuration: 0.4) { // these changes should occur over the duration of 0.4 seconds
+        // reset the transformations for the karts to their original state
+        self.kartView0.transform = .identity
+        self.kartView1.transform = .identity
+        self.kartView2.transform = .identity
+        // reset the positions of the karts to their initial positions
+        self.kartView0.center = self.originalKartCenters[0]
+        self.kartView1.center = self.originalKartCenters[1]
+        self.kartView2.center = self.originalKartCenters[2]
+      }
   }
   
   // Called whenever the view becomes visible on the screen
